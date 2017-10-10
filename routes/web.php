@@ -33,7 +33,7 @@ Route::post('/profile/update', [
     'uses'=>'ViewController@update',
     'as'=>'profile.update'
     ]);
-Route::get('/profile/{id}/delete', [
+Route::get('/profile/delete/{id}', [
     'uses'=>'ViewController@delete',
     'as'=>'profile.delete'
     ]);

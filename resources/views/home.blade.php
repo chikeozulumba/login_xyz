@@ -28,8 +28,7 @@
                             </p>
                             @if(Auth::user()->role === "Admin")
                             <span>
-                                <a href="{{route('profile.delete','$user->id')}}" class="btn btn-md btn-success">Edit User</a>
-                                <a href="{{route('profile.delete', '$user->id')}}" class="btn btn-md btn-danger">Delete User</a>
+                                <a href="{{route('profile.delete', $u->id)}}" class="btn btn-md btn-danger">Delete Staff Record</a>
                             </span>
                             @endif
                         </div>

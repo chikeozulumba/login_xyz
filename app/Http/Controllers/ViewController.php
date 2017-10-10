@@ -23,9 +23,13 @@ class ViewController extends Controller
 
     protected function delete($id)
     {
-        $user = Post::find($id);
-        $user->delete();
-
-        return view('home');
+        $user = User::all();
+        if (Auth::user()->role === "Admin") {
+            $user = User::find($id);
+            $user->delete();
+        } else {
+            return "unauthorized";
+        }
+        return view('home')->withUser($user);
     }
 }

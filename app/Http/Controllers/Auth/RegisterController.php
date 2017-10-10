@@ -82,7 +82,7 @@ class RegisterController extends Controller
             'last_name' => $data['last_name'],
             'phone' => $data['phone'],
             'gender' => $data['gender'],
-            // 'role' => $role,
+            'role' => $role,
             'email' => $data['email'],
             'slug' => str_slug($full_name),
             'password' => bcrypt($data['password']),
