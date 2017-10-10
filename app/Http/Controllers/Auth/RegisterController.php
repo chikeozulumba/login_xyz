@@ -72,11 +72,17 @@ class RegisterController extends Controller
         } else {
             $avatar = 'public/defaults/avatars/female.jpeg';
         }
+        if ($data['role']) {
+            $role = 'Admin';
+        } else {
+            $role = 'Staff';
+        }
         return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'phone' => $data['phone'],
             'gender' => $data['gender'],
+            // 'role' => $role,
             'email' => $data['email'],
             'slug' => str_slug($full_name),
             'password' => bcrypt($data['password']),

@@ -14,7 +14,27 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <div class="col-lg-10 col-lg-offset-2">
+                    @foreach($user as $u)
+                        <div class="panel-body">
+                            <p class="text-left">
+                                {{$u->first_name}}  {{$u->last_name}} 
+                            </p>
+                            <p class="text-left">
+                                {{$u->email}}  
+                            </p>
+                            <p class="text-right">
+                                {{$u->role}}  
+                            </p>
+                            @if(Auth::user()->role === "Admin")
+                            <span>
+                                <a href="{{route('profile.delete','$user->id')}}" class="btn btn-md btn-success">Edit User</a>
+                                <a href="{{route('profile.delete', '$user->id')}}" class="btn btn-md btn-danger">Delete User</a>
+                            </span>
+                            @endif
+                        </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>

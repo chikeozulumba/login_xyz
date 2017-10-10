@@ -44,6 +44,7 @@
 
                             <div class="col-md-6">
                                 <select class="form-control" name="gender" id="gender">
+                                    <option value="">Gender</option>
                                     <option value="1">Male</option>
                                     <option value="0">Female</option>
                                 </select>
@@ -51,6 +52,24 @@
                                 @if ($errors->has('gender'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('phone') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('role') ? ' has-error' : '' }}">
+                            <label for="role" class="col-md-4 control-label">Role</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control" name="role" id="role">
+                                    <option value="">Role</option>
+                                    <option value="1">Admin</option>
+                                    <option value="0">Staff</option>
+                                </select>
+
+                                @if ($errors->has('role'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('role') }}</strong>
                                     </span>
                                 @endif
                             </div>
