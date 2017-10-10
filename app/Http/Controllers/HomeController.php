@@ -28,6 +28,7 @@ class HomeController extends Controller
 
         $user = User::find($id);
 
+        // return User::all();
         return view('home')->withUser($user);
     }
 }
